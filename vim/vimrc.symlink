@@ -15,7 +15,7 @@ set modelines=0 " security see http://www.techrepublic.com/blog/security/turn-of
 set guioptions-=T " go away toolbar
 "colorscheme darkblue
 "colorscheme molokai
-colorscheme Mustang
+"colorscheme Mustang
 "colorscheme Tomorrow-Night-Eighties
 set history=500 " i like history
 set laststatus=2 " statusline ftw
