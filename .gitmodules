@@ -7,3 +7,6 @@
 [submodule "vim/vim.symlink/bundle/ack"]
 	path = vim/vim.symlink/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/vim.symlink/bundle/fugitive"]
+	path = vim/vim.symlink/bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
