@@ -1,0 +1,134 @@
+filetype off
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+set bg=dark
+
+set cc=120
+
+" Colors:
+set t_Co=256
+
+" General --------------
+set nocompatible " disable vi compatibility
+set modelines=0 " security see http://www.techrepublic.com/blog/security/turn-off-modeline-support-in-vim/4476
+set guioptions-=T " go away toolbar
+"colorscheme darkblue
+"colorscheme molokai
+colorscheme Mustang
+"colorscheme Tomorrow-Night-Eighties
+set history=500 " i like history
+set laststatus=2 " statusline ftw
+let mapleader = ',' " leader key
+"set nowrap
+set number
+
+" Tabs -----------------
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+
+" Searching ------------
+set ignorecase " ignore case when everything is lowercase
+set smartcase " case sensitive when there is a capital letter
+set hls
+
+" Rest -----------------
+set hidden " put buffer in background without write
+
+" Wildmode
+set wildmode=list:longest " terminal like tab completion
+
+" Scrolling
+set scrolloff=3
+
+" Invisibles
+set list
+nmap <leader>l :set list!<CR> " toogle set list
+set listchars=tab:▸\ ,eol:¬ " show tabs and trailing
+
+" Statusline
+if has("statusline")
+  set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
+
+" vimrc on the fly
+"if has("autocmd")
+"  autocmd bufwritepost .vimrc source $MYVIMRC
+"endif
+
+" CtrlP
+let g:ctrlp_custom_ignore = { 
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.rsync_cache$\|coverage$\|\.idea$\|tmp$',
+  \ 'file': '\.sw.*$\|\.so$\|\.dll$\|\.DS_Store$\|\.un~',
+  \}
+
+" Kill trailing whitespaces" ==================================================
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" Map it to a key 
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+" do it on save
+autocmd BufWritePre *.rb,*.ru,*.py,*.js*,*.?css,*.html*,*.erb,*.feature :call <SID>StripTrailingWhitespaces()
+
+
+" see:  http://stevelosh.com/blog/2010/09/coming-home-to-vim/? ===============
+" Save undo in a file, so I can undo after closing a file
+" set undofile
+
+" set relativenumber
+
+" remove search highlighting
+nnoremap <leader><space> :noh<cr>
+"
+" Movement
+nnoremap <tab> %
+vnoremap <tab> %
+
+
+
+" Force to learn to move properly in Vim
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" nnoremap <left> <nop>
+" nnoremap <right> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
+" nnoremap j gj
+" nnoremap k gk
+
+" Prtify all JSON  ======================
+nnoremap <leader>J :%!python -mjson.tool<CR>
+
+
+
+" Snipmate Snippets
+autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
+autocmd BufNewFile,BufRead *.js.eco set filetype=html.eco
+
+" Highlight Line/Column where the cursor is
+set cursorline " off with set cursorlone!
+"set cursorcolumn 
+"
+"
+"
+" BACKUP AND TEMP FILES:
+"=======================
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+
+
+
