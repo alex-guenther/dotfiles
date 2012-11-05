@@ -1,0 +1,16 @@
+export PATH=/usr/local/share/npm/bin:/usr/local/bin:/Users/algu/tools/bin:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#export PATH=/usr/local/bin:$PATH
+
+### Rails Booster
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
+
+export  EDITOR=/usr/bin/vim
+
+#alias ctags=/usr/local/Cellar/ctags/5.8/bin/ctags
