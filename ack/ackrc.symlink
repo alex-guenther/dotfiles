@@ -1,5 +1,5 @@
---type-add=js=.coffee,.eco
---type-add=ruby=.feature
+--type-add=js=.coffee,.eco,.erb
+--type-add=ruby=.feature,.erb,.ru
 --type-add=css=.scss
 --ignore-dir=public
 --ignore-dir=tmp
