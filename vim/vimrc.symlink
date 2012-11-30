@@ -20,6 +20,7 @@ set guioptions-=T " go away toolbar
 set history=500 " i like history
 set laststatus=2 " statusline ftw
 let mapleader = ',' " leader key
+"let maplocalleader = '\' " default leader for buffers
 "set nowrap
 set number
 
@@ -130,5 +131,8 @@ set cursorline " off with set cursorlone!
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
 
-
+" CSS
+"
+"sort css alphabeticaly
+au BufNewFile,BufRead *.scss,*.less,*.css nnoremap <buffer> <localleader>s ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
