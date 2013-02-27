@@ -136,3 +136,13 @@ set directory=~/.vim/tmp/swap//
 "sort css alphabeticaly
 au BufNewFile,BufRead *.scss,*.less,*.css nnoremap <buffer> <localleader>s ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
+
+" Clean render Buggs
+nnoremap <leader>r :redraw!<cr>
+
+
+" wrap lines 
+set wrap
+
+" Nicer way bak to Normalmode
+inoremap jj <Esc>
