@@ -2,8 +2,8 @@ filetype off
 call pathogen#infect()
 syntax on
 filetype plugin indent on
-set bg=dark
 
+set bg=dark
 set cc=120
 
 " Colors:
@@ -111,7 +111,7 @@ vnoremap <tab> %
 " nnoremap j gj
 " nnoremap k gk
 
-" Prtify all JSON  ======================
+" Pretify all JSON  ======================
 nnoremap <leader>J :%!python -mjson.tool<CR>
 
 
