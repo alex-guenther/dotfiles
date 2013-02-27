@@ -152,3 +152,10 @@ let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
 
 :set incsearch
+
+" Diff with Disc version of the file
+command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+:nnoremap <localleader>dd :DiffOrig<CR>
+
+:nnoremap <localleader>do :diffoff<CR>
+:nnoremap <localleader>dt :diffthis<CR>
