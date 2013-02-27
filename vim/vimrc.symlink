@@ -128,8 +128,8 @@ set cursorline " off with set cursorlone!
 "
 " BACKUP AND TEMP FILES:
 "=======================
-set backupdir=~/.vim/tmp/backup//
-set directory=~/.vim/tmp/swap//
+set backupdir=~/.vim/backup_dir//
+set directory=~/.vim/swap_dir//
 
 " CSS
 "
