@@ -12,3 +12,6 @@ set smartcase " case sensitive when there is a capital letter§
 
 " Turn off blinking
 set guicursor=a:blinkon0 
+
+set guifont=Monaco:h11
+"set guifont='Source Code Pro':h12
