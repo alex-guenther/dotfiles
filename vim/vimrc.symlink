@@ -81,7 +81,7 @@ endfunction
 " Map it to a key 
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 " do it on save
-autocmd BufWritePre *.rb,*.ru,*.py,*.js*,*.?css,*.html*,*.erb,*.feature :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.rb,*.ru,*.py,*.js*,*.coffee,*.?css,*.html*,*.erb,*.feature :call <SID>StripTrailingWhitespaces()
 
 
 " see:  http://stevelosh.com/blog/2010/09/coming-home-to-vim/? ===============
