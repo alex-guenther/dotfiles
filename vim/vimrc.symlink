@@ -63,7 +63,7 @@ endif
 " CtrlP
 let g:ctrlp_custom_ignore = { 
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.rsync_cache$\|coverage$\|\.idea$\|tmp$',
-  \ 'file': '\.sw.*$\|\.so$\|\.dll$\|\.DS_Store$\|\.un~',
+  \ 'file': '\.sw.*$\|\.so$\|\.dll$\|\.DS_Store$\|\.un\~',
   \}
 
 " Kill trailing whitespaces" ==================================================
