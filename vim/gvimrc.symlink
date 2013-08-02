@@ -1,9 +1,10 @@
 " MacVim Config
 "colorscheme desert
 "colorscheme Tomorrow-Night-Eighties
-set bg=dark
-colorscheme solarized "molokai 
+set bg=light
+"colorscheme solarized "molokai 
 ""clouds_midnight "mustang "molokai
+colorscheme solarized
 
 " Searching ------------
 set ignorecase " ignore case when everything is lowercase
