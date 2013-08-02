@@ -9,3 +9,6 @@ colorscheme solarized
 " Searching ------------
 set ignorecase " ignore case when everything is lowercase
 set smartcase " case sensitive when there is a capital letter§
+
+" Turn off blinking
+set guicursor=a:blinkon0 
