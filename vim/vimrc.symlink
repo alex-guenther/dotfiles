@@ -159,3 +159,7 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 
 :nnoremap <localleader>do :diffoff<CR>
 :nnoremap <localleader>dt :diffthis<CR>
+
+
+" USE THE SILVER SEARCHER instead of ack:
+let g:ackprg = 'ag --nogroup --nocolor --column'
