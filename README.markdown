@@ -14,5 +14,7 @@
 git clone REPO ~/.dotfiles
 cd ~/.dotfiles
 # on OS X you probably want to run brew install grc coreutils firs
+./install.sh
+or
 rake install #symlinks the dotfiles
 ```
