@@ -35,3 +35,27 @@ tasks:
         msg: "# {{.USR_DIR}}/go/bin should be in $PATH"
       - sh: "[ ! -d {{.USR_DIR}}/go-{{.GO_VERSION}} ]"
         msg: "# directory {{.USR_DIR}}/go-{{.GO_VERSION}} should not exist"
+
+  generate:foo:
+    desc: Experimental task for text generation
+    cmds:
+      - |-
+        echo '#sample.yaml
+        version: 3
+        
+        vars:
+          GREETING: {{.GREETING}}
+
+        foo: asdasdads'
+
+
+  generate:dockerfile:go-alpine:
+    desc: Generate a Dockerfile for go-alpine
+    cmds:
+      - |-
+        echo '#generated with: task generate:dockerfile:go-alpine
+        FROM go:alpine
+        ' > Dockerfile
+    preconditions:
+      - sh: "[ ! -f Dockerfile ]"
+        msg: "# a Dockerfile already exists in this directory."
