@@ -1,0 +1,37 @@
+# https://taskfile.dev
+
+# installation: https://taskfile.dev/#/installation?id=get-the-binary
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    desc: example task
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  golang:install:
+    # silent: true
+    desc: Install golang version specified via GO_VERSION and symlink it.
+    vars:
+      GO_VERSION: '{{default "1.16.2" .GO_VERSION}}'
+      USR_DIR: "{{.HOME}}/usr"
+    cmds:
+      - mkdir -p "{{.USR_DIR}}/go-{{.GO_VERSION}}"
+      - cd "{{.USR_DIR}}/go-{{.GO_VERSION}}"
+      - pwd
+      - wget -O - "https://golang.org/dl/go{{.GO_VERSION}}.linux-amd64.tar.gz" | tar xvz -C "{{.USR_DIR}}/go-{{.GO_VERSION}}"
+      - mv "{{.USR_DIR}}/go-{{.GO_VERSION}}"/go/* "{{.USR_DIR}}/go-{{.GO_VERSION}}/"
+      - rmdir "{{.USR_DIR}}/go-{{.GO_VERSION}}/go"
+      - rm "{{.USR_DIR}}/go"
+      - ln -s "{{.USR_DIR}}/go-{{.GO_VERSION}}" "{{.USR_DIR}}/go"
+      - go version
+    preconditions:
+      - sh: echo "{{.PATH}}" | grep "{{.USR_DIR}}/go/bin"
+        msg: "# {{.USR_DIR}}/go/bin should be in $PATH"
+      - sh: "[ ! -d {{.USR_DIR}}/go-{{.GO_VERSION}} ]"
+        msg: "# directory {{.USR_DIR}}/go-{{.GO_VERSION}} should not exist"
