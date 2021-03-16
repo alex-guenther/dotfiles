@@ -1,2 +1,4 @@
 *.sw*
 *.netrwhist
+git/gitconfig.local.symlink
+
